@@ -2,8 +2,8 @@
 
 ---
 
-**DISCLAIMER**: This file is not intended to be a readme file. This is more like short notes 
-for a quick reference to the django command line covered in the course. For a full tutorial kindly refer 
+**DISCLAIMER**: This file is not intended to be a readme file. This document is 
+for a quick reference to the django cmd commands covered in the course. For a full tutorial kindly refer 
 to the video lectures - https://www.youtube.com/watch?v=UmljXZIypDc&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&ab_channel=CoreySchafer
 
 #### Part 1: Create a django project
@@ -21,9 +21,8 @@ Note: Further commands will be executed from within the `djano_project` director
 
 #### Part 2: Applications and Routes
 
- - Applications are independent of the django_project. A project can have several applications.
- - Applications can be easily ported from one project to another.
-    
+Applications are independent of the django_project. A project can have several applications. 
+Applications can be easily ported from one project to another. 
     
     # Create a new application
     python manage.py startapp blog
