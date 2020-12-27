@@ -19,7 +19,7 @@ Note: Further commands will be executed from within the `djano_project` director
     # python manage.py runserver
     # First time this throws warnings for unapplied migrations, but that is okay. We will fix it later.
 
-##### Part 2: Applications and Routes
+#### Part 2: Applications and Routes
 
  - Applications are independent of the django_project. A project can have several applications.
  - Applications can be easily ported from one project to another.
@@ -29,12 +29,12 @@ Note: Further commands will be executed from within the `djano_project` director
     python manage.py startapp blog
 
 
-##### Part 3: Templates and CSS
+#### Part 3: Templates and CSS
 
 - https://getbootstrap.com/docs/4.3/getting-started/introduction/
 
 
-##### Part 4: Admin page
+#### Part 4: Admin page
 Go to : localhost:8080/admin
 
     # First time this throws up error
@@ -46,7 +46,7 @@ Go to : localhost:8080/admin
     python manage.py migrate
     python manage.py createsuperuser
 
-##### Part 5: Databases and Migrations
+#### Part 5: Databases and Migrations
 
 - Django allows us to create our own ORMs. These database structures are called as models.
 - Refer to models.py file within the application directory
@@ -63,3 +63,5 @@ Go to : localhost:8080/admin
     python manage.py migrate
     
 
+
+---
