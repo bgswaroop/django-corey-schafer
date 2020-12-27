@@ -48,9 +48,8 @@ Go to : localhost:8080/admin
 
 #### Part 5: Databases and Migrations
 
-- Django allows us to create our own ORMs. These database structures are called as models.
-- Refer to models.py file within the application directory
-
+Django allows us to create our own ORMs. These database structures are called as models. 
+Refer to models.py file within the application directory
 
     # After defining the model class within the models.py file.  
     # This command will create the migrate code inside the migration sub-directory    
