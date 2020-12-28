@@ -124,7 +124,12 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
-
 STATIC_URL = '/static/'
 
+# This command will override the default bootstrap2 in crispy, which is outdated at this moment.
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+# The login view redirects the users to their profile page upon successful creation.
+# We can change this by instead redirecting users to the blog-home page
+LOGIN_REDIRECT_URL = 'blog-home'
+LOGIN_URL = 'login'

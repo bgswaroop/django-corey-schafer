@@ -80,4 +80,29 @@ moment.
 In the base html template add the line `{% load crispy_forms_tags %}` and style the forms by using `{{ form|crispy }}` in the corresponding html template. 
 
 
+#### Part 7: Login and Logout System
+
+Instead of writing our own views, we now use the Django inbuilt views for login and logout.
+To do this we need to import `django.contrib.auth.views` by providing appropriate path to the html template.
+For instance, we can modify the `urls.py` project file with the following lines:
+
+    from django.contrib.auth import views as auth_views
+    path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),
+
+We can change the default behaviour of login view, by setting a few globals. For example,
+the login view redirects the users to their profile page upon successful creation. We can change 
+this by instead redirecting users to the `blog-home` page, by appending the following code
+snippet to the `settings.py` file:  
+
+    LOGIN_REDIRECT_URL = 'blog-home'
+
+When users try to access certain pages that require authentication, then such views can be
+decorated using the built-in decorator `from django.contrib.auth.decorators import login_required`
+Note that, we will have to also change the default route for the log-in page in this decorator.
+This can be achieved by setting the global variable in the `settings.py` file:
+
+    LOGIN_URL = 'login'
+
+
+
 ---
