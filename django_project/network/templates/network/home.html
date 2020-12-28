@@ -1,0 +1,21 @@
+{% extends "network/base.html"%}
+
+{% block content %}
+{% for member in network %}
+<!-- Code adapted from: https://github.com/CoreyMSchafer/code_snippets/blob/master/Django_Blog/snippets/article.html -->
+<article class="media content-section">
+    <div class="media-body">
+        <div class="article-metadata">
+            <a class="mr-2" href="#">{{ member.user_id }}</a>
+            <!-- Date formatting checkout: https://docs.djangoproject.com/en/3.1/ref/templates/builtins/#date -->
+            <div class="contact-card-heading-date">
+                <small class="text-muted">Member since {{member.date_joined }}</small>
+            </div>
+        </div>
+        <h2><a class="article-title" href="#">Firstname Lastname</a></h2>
+        <p class="article-content">{{ member.country}}</p>
+        <p class="article-content">{{ member.phone_number}}</p>
+    </div>
+</article>
+{% endfor %}
+{% endblock content %}

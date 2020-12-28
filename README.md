@@ -27,6 +27,7 @@ Applications can be easily ported from one project to another.
     # Create a new application
     python manage.py startapp blog
 
+To install an app into the current project add an appropriate entry in the settings.py file of the project
 
 #### Part 3: Templates and CSS
 
@@ -59,7 +60,8 @@ Refer to models.py file within the application directory
 
     # Now, the above changes will get reflected into the database
     python manage.py migrate
-    
 
+
+To show the app in the admin page, register the app in the `admin.py` file of the app.
 
 ---
