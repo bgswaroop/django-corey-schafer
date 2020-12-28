@@ -64,4 +64,20 @@ Refer to models.py file within the application directory
 
 To show the app in the admin page, register the app in the `admin.py` file of the app.
 
+
+#### Part 6: Forms
+
+Use pre-defined forms in Django
+
+    from django.contrib.auth.forms import UserCreationForm
+
+Modify these forms by inheriting from them as shown in the file `users/forms.py` 
+
+A very commonly used library for forms is *crispy forms*. Add the application entry in the settings.py and 
+also add the line `CRISPY_TEMPLATE_PACK = 'bootstrap4'` to the end of this file. This command will override the default `bootstrap2` which is outdated at this 
+moment.
+
+In the base html template add the line `{% load crispy_forms_tags %}` and style the forms by using `{{ form|crispy }}` in the corresponding html template. 
+
+
 ---
