@@ -103,6 +103,34 @@ This can be achieved by setting the global variable in the `settings.py` file:
 
     LOGIN_URL = 'login'
 
+#### Part 8: User Profiles and Pictures
+
+User profiles can be created by creating a model with OneToOne mapping of the username.
+The media content can be uploaded to a specific location in the project. To do this we will have to 
+specify their location in the `settings.py` file:
+
+    # For performance reasons, media files are stored on the file system and not in the database
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+    MEDIA_URL = '/media/'
+
+Once the Profiles model is migrated into the database, we can directly access the members of 
+the profile using the users object (which is available by default in all Django html templates).
+Refer to `templates/users/profile.html`.
+
+Important! (TBH, I didn't understand this part):
+We need to add media routes to url patterns. https://docs.djangoproject.com/en/3.1/howto/static-files/#serving-files-uploaded-by-a-user-during-development
+These modifications were implemented in our project's `urls.py` file.
+
+*Signals*: Let's say you want to perform some action whenever a piece of code gets executed.
+For example, whenever a user is registered, you may want to automatically create a profile for the user.
+This can be achieved by using signals.
+https://docs.djangoproject.com/en/3.1/topics/signals/
+
+The receivers for the signal can be defined in the application root `signals.py` and 
+its corresponding entry in the `apps.py` file.
+
+
+
 
 
 ---
