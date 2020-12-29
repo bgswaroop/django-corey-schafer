@@ -128,9 +128,35 @@ https://docs.djangoproject.com/en/3.1/topics/signals/
 
 The receivers for the signal can be defined in the application root `signals.py` and 
 its corresponding entry in the `apps.py` file.
+ 
+#### Part 9: Updating user profile via forms
+
+In order to update values inside our models (database) we will have to create a model form. 
+For instance, we can create the following form. Also check the corresponding `profile` view in the
+application's `views.py` file.
 
 
+    class UserUpdateForm(forms.ModelForm):
+        email = forms.EmailField() 
+        class Meta:
+            model = User
+            fields = ['username', 'email']
 
+
+Default values in a form can be filled in by specifying the values while 
+creating the objects of the forms:
+
+    u_form = UserUpdateForm(instance=request.user)
+    p_form = ProfileUpdateForm(instance=request.user.profile)
+
+Note that when the forms contain special data, within the POST method we need to 
+add the appropriate the arguments. For instance, when there are images:
+
+    p_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
+
+Always perform a *redirect* when the form data is successfully submitted.
+
+Additionally, perform image resize to save space on the web server.
 
 
 ---
