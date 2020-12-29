@@ -185,5 +185,10 @@ Note that when we use `CreateView` and `UpdateView` the default location of the 
 HTML templates have default access to `user` and `object` members.
 
 
+#### Part 11: Pagination
+
+While using pagination, we can go to a certain page by modifying the url as `http://127.0.0.1:8000/blog/?page=<page-number>`
+
+Paginator inside HTML templates can be accessed by using the default parameter `page_obj`.  
 
 ---
