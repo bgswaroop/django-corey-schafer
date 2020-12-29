@@ -1,0 +1,21 @@
+{% extends "blog/base.html"%}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="content-section">
+    <!-- we need to add CSRF token within our form -->
+    <!-- this will prevent our form from forgery attacks -->
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Blog Post</legend>
+            <!-- {{ form }} can be replaced with .as_p to render as paragraphs -->
+            <!-- {{ form.as_p }}, we can further use crispy styling to our forms as follows -->
+            {{ form|crispy }}
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit">Submit</button>
+        </div>
+    </form>
+</div>
+{% endblock content %}

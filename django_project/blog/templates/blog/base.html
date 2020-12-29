@@ -46,8 +46,9 @@
                 <div class="navbar-nav">
                     <!-- user variable is provided by Django which point to the current user -->
                     {% if user.is_authenticated %}
-                        <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+                        <a class="nav-item nav-link" href="{% url 'post-create' %}">New Post</a>
                         <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
+                        <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
                     {% else %}
                         <!-- href = "#" means that we are linking to a dead path -->
                         <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>

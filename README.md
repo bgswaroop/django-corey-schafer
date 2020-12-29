@@ -158,5 +158,32 @@ Always perform a *redirect* when the form data is successfully submitted.
 
 Additionally, perform image resize to save space on the web server.
 
+#### Part 10: Class based views
+
+Some of the most common views are available in Django as class based views. Such as 
+- list views
+- detail view
+- create view
+- update view
+- delete view, etc
+
+Note that so far we have been using only function based views, class based views have more 
+functionality.
+
+We can create dynamic urls by using variables to fill in parts of this url. Refer to the 
+`PostDetailView` in `urls.py` for further details.
+
+Let's say the user needs to be logged in to access certain web-page. Earlier we had imposed this 
+by decorating the function views. However, this is a little different for class based views. Here we
+need to inherit our class view from `django.contrib.auth.mixins.LoginRequiredMixin`. This will lead to 
+multiple inheritence for class views. Always keep the first argument as `LoginRequiredMixin` in 
+multiple inheritence.
+
+Note that when we use `CreateView` and `UpdateView` the default location of the html template is
+`templates/<app-name>/<model-name>_form.html`
+
+HTML templates have default access to `user` and `object` members.
+
+
 
 ---
