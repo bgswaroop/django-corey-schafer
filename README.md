@@ -191,4 +191,25 @@ While using pagination, we can go to a certain page by modifying the url as `htt
 
 Paginator inside HTML templates can be accessed by using the default parameter `page_obj`.  
 
+
+#### Part 12: Password reset and emails
+
+Setting up mail server to send emails. Note that we have to set the environment variables
+`EMAIL_USER` and `EMAIL_PASS`. This is done to prevent adding access information into the code.
+
+To use gmail server...
+
+Add the configuration into `settings.py` file:
+
+    # Configuring mail server
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_HOST = 'smtp.gmail.com'
+    EMAIL_PORT = 587
+    EMAIL_USE_TLS = True
+    EMAIL_HOST_USER = os.environ.get('EMAIL_USER')
+    EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
+    
+
+
+
 ---
